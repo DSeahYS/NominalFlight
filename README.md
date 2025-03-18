@@ -120,6 +120,27 @@ Nominal_Flight_Path_Generator/       # Root project directory
 6. **Flight Dynamics:** Smooth the path with realistic turn modeling and altitude/speed profiles.
 7. **Visualization:** View the generated path in 3D or export it.
 
+## Sample Workflow
+
+# Sample Raw Data
+![image](https://github.com/user-attachments/assets/238d9f72-31f8-4ee8-a509-5aaeeb1e45a8)
+
+# Cleaned with Data_cleaner.py
+![image](https://github.com/user-attachments/assets/07e47106-b958-47bc-8912-a4a7f6459d29)
+
+# Extraction of Nominal Information
+![image](https://github.com/user-attachments/assets/531c1ae6-8993-4c61-8c61-d4a3c9b8c5df)
+![image](https://github.com/user-attachments/assets/9d1f3dc4-a225-416a-8dcb-4c2262ca61bf)
+![image](https://github.com/user-attachments/assets/ba81469c-29f1-415b-8924-41b0d0467c34)
+![image](https://github.com/user-attachments/assets/23f99015-a08f-4d83-81f5-4d746c54296e)
+
+# UI Generated
+![image](https://github.com/user-attachments/assets/97b1fca7-debf-4b46-bffb-5bcc659c0721)
+
+# Sample Results
+![image](https://github.com/user-attachments/assets/6b39a549-ce4e-4e0e-a0a0-e001a4f998bf)
+
+
 ## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
