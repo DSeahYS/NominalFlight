@@ -146,28 +146,6 @@ Nominal_Flight_Path_Generator/
 6. **Flight Dynamics**: The path is smoothed with realistic turn modeling and altitude/speed profiles
 7. **Visualization**: The generated path can be visualized in 3D or exported to various formats
 
-## Task Tracker
-
-### Completed
-- [x] Set up project structure
-- [x] Create CSV parser for historical flight data
-- [x] Fix altitude parsing issues in historical data
-- [x] Generate cleaned historical data files
-
-### In Progress
-- [ ] Extract nominal patterns from cleaned historical data
-- [ ] Develop flight phase identification algorithm
-- [ ] Implement statistical analysis of flight parameters
-
-### To Do
-- [ ] Create nominal profile templates by route
-- [ ] Develop flight path generation algorithm
-- [ ] Implement aircraft performance constraints
-- [ ] Create visualization module for generated paths
-- [ ] Develop GUI for flight path generation
-- [ ] Add support for additional aircraft types
-- [ ] Implement batch processing capabilities
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
