@@ -1,116 +1,125 @@
-Nominal Flight Path Generator
-A sophisticated tool for generating realistic flight paths between airports, based on aircraft performance models and historical flight data patterns.
+# Nominal Flight Path Generator
 
-Overview
-The Nominal Flight Path Generator creates realistic flight trajectories between any two airports worldwide. It uses a combination of real-world aeronautical information, aircraft performance models, and historical flight patterns to generate flight paths that closely resemble actual commercial flights.
+A  flight path generation system producing realistic aircraft trajectories with three levels of variation, built on aircraft physics models and statistical pattern extraction.
 
-Current Status
-✅ Historical Data Cleaning Complete! Successfully processed 48 flights:
+## Overview
 
-28 WSSS-WMKK (Singapore to Kuala Lumpur) flights with cruise altitudes 22,000-24,050 ft
-20 WMKK-WSSS (Kuala Lumpur to Singapore) flights with cruise altitudes 23,000-30,000 ft
-Features
-Generate flight paths between any two airports worldwide
-Interactive GUI for easy airport selection and parameter configuration
-Support for multiple aircraft types with realistic performance models
-Generate flight paths at different detail levels
-Support for multiple output formats (KML, JSON, CSV)
-Real-time visualization of generated flight paths
-Command-line interface for batch processing
-Installation
-Prerequisites
-Python 3.8 or higher
-Required Python packages:
-tkinter
-numpy
-geopy
-matplotlib
-scipy
-pandas
-Setup
-Clone the repository:
+The **Nominal Flight Path Generator** creates realistic flight trajectories between airports based on historical data patterns and aircraft performance constraints. The system generates three distinct types of routes for comparison:
 
-git clone https://github.com/yourusername/nominal-flight-path-generator.git
-cd nominal-flight-path-generator
-Install dependencies:
+- **Nominal routes (red lines):** Authentic flight paths extracted from historical AirAsia flight data, representing the most common trajectory between airports.
+- **Strictly nominal routes (green lines):** Controlled variations that closely follow nominal paths with small, deterministic deviations using sinusoidal patterns.
+- **Synthetic routes (blue lines):** Realistic alternative paths with larger variations that still adhere to aircraft physics constraints.
 
-pip install -r requirements.txt
-Ensure data files are in place:
+All generated routes respect real-world aircraft performance limitations, including minimum turn radius calculations based on speed and bank angle constraints.
 
-data/airports.csv: Database of airports worldwide
-data/aircraft_data.csv: Aircraft performance specifications
-historical/: Raw historical flight data files
-data/aip/: Aeronautical Information Publication data
-Usage
-Data Processing Pipeline
-Clean historical data:
+## Features
 
-python src/flight_data_cleaner.py --input historical --output data/cleaned_historical
-Extract nominal patterns:
+- **Triple comparison visualization:** View nominal, strictly nominal, and synthetic routes side-by-side.
+- **Physics-based constraints:** Realistic turn radius calculations based on aircraft speed.
+- **Kalman filter smoothing:** Advanced trajectory smoothing for realistic path generation.
+- **Correlated variations:** Continuous, smooth variations instead of independent point randomization.
+- **Customizable variation levels:** Control the amount of deviation from nominal paths.
+- **Aircraft performance models:** Routes respect aircraft-specific performance characteristics.
+- **SID/STAR integration:** Incorporates real-world departure and arrival procedures.
+- **KML export:** Generate visualization files compatible with Google Earth.
+- **Interactive UI:** User-friendly interface for route generation and visualization.
 
-python src/nominal_extractor.py --input data/cleaned_historical --output data/nominal
-Generate synthetic flight paths:
+## Usage
 
-python src/flight_generator.py --departure WSSS --arrival WMKK --aircraft A320-214
-Graphical User Interface
-Run the application:
+### GUI Mode
 
-python main.py
-Using the interface:
+1. Launch the application without parameters:  
+   ```sh
+   python main.py
+   ```
+2. Select aircraft type from the dropdown menu.
+3. Choose departure and arrival airports.
+4. Adjust settings (variation level, detail level, etc.).
+5. Click **"Generate Flight Path"** to create routes.
+6. Use **"Visualize Last Generated"** to view the paths.
 
-Select an aircraft type from the dropdown menu
-Search and select departure airport from the tree view
-Search and select arrival airport from the tree view
-Configure advanced options if needed
-Click "Generate Flight Path" to create the flight path
-Use "Visualize Last Generated" to view the flight in 3D
-Command Line Interface
-The tool can also be used from the command line:
+### Command Line Mode
 
-python main.py --departure WSSS --arrival WMKK --aircraft A320-214 --visualize --output flight_path.kml
-Options:
+Generate a single route:
+```sh
+python main.py --departure WSSS --arrival WMKK --aircraft A320-214 --visualize
+```
 
---departure: ICAO code of departure airport
---arrival: ICAO code of arrival airport
---aircraft: Aircraft type (e.g., A320-214, B777-300ER)
---extract-patterns: Extract new patterns from historical data
---visualize: Visualize the generated flight path
---output: Output file name and format
-File Structure
-Nominal_Flight_Path_Generator/
-├── main.py                      # Main application entry point
-├── historical/                  # Raw historical flight data
-│   ├── Historical_AXM706_WSSS-WMKK.csv
-│   └── Historical_AXM713_WMKK-WSSS.csv
-├── data/                        # Data directory
-│   ├── aircraft_data.csv        # Aircraft performance data
-│   ├── airports.csv             # Airport database
-│   ├── aip/                     # AIP data directory
-│   │   ├── MY_AIP.json          # Malaysia AIP
-│   │   └── SG_AIP.json          # Singapore AIP
-│   ├── cleaned_historical/      # Cleaned historical flight data
-│   │   ├── flights_AXM706_WSSS-WMKK.csv
-│   │   ├── flights_AXM713_WMKK-WSSS.csv
-│   │   ├── waypoints_AXM706_WSSS-WMKK.csv
-│   │   └── waypoints_AXM713_WMKK-WSSS.csv
-│   └── nominal/                 # Generated nominal patterns
-│   │   ├── enroute_patterns.json
-│   │   └── nominal_patterns.json
-├── visualization/               # Visualization outputs
-└── src/                         # Source code modules
-    ├── data_processor.py        # Data loading utilities
-    ├── flight_dynamics.py       # Aircraft performance models
-    ├── nominal_extractor.py     # Pattern extraction
-    ├── route_planner.py         # Route planning logic
-    ├── route_smoother.py        # Flight path smoothing
-    └── visualization.py         # Visualization utilities
-How It Works
-Data Cleaning: Raw historical flight data is processed and cleaned to extract realistic patterns
-Nominal Pattern Extraction: Cleaned data is analyzed to identify common flight profiles
-Airport Selection: Choose departure and arrival airports from the global database
-Route Planning: The system constructs a route using SIDs, STARs, and en-route waypoints
-Aircraft Performance: Realistic aircraft performance constraints are applied
-Flight Dynamics: The path is smoothed with realistic turn modeling and altitude/speed profiles
-Visualization: The generated path can be visualized in 3D or exported to various formats
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Generate multiple routes with variation:
+```sh
+python main.py --departure WSSS --arrival WMKK --aircraft A320-214 --routes 5 --visualize
+```
+
+## Interface Instructions
+
+The application interface includes:
+
+### Basic Options:
+- **Aircraft Selection:** Choose from various Airbus models.
+- **Airport Selection:** Search and select from 80,000+ global airports.
+
+### Advanced Options:
+- **Detail Level:** Controls waypoint density (**Low/Medium/High**).
+- **Route Count:** Number of synthetic routes to generate (**1-20**).
+- **Variation Level:** Controls deviation from nominal path (**0.05-0.4**).
+- **Strict Nominal Deviation:** Controls green line deviation amount (**km**).
+- **Visualization Options:** KML/JSON/CSV output formats.
+- **Status Bar:** Shows progress and operation information.
+
+## Project Structure
+
+```
+Nominal_Flight_Path_Generator/       # Root project directory
+├── __init__.py                      # Package initialization for Python imports
+├── clean_historical_data.py         # Script for cleaning historical flight data
+├── main.py                          # Main application entry point with UI and pipeline functions
+├── visualization/                   # Generated visualization outputs
+│   ├── flight_path_WMKK_WSSS.kml    # Single route KML file (WMKK to WSSS)
+│   ├── flight_path_WSSS_WMKK.kml    # Single route KML file (WSSS to WMKK)
+│   ├── flightpaths_WMKK_WSSS.kml    # Multi-route KML with nominal, strict nominal, and synthetic paths
+│   └── flightpaths_WSSS_WMKK.kml    # Multi-route KML with nominal, strict nominal, and synthetic paths
+├── nominal/                         # Data generated by nominal pattern extractor
+│   └── visualizations/              # Analytical visualizations of flight patterns
+│       ├── altitude_profile_xxx-xxx.png  # Altitude profile charts by route
+│       ├── flight_phase_xxx-xxx.png      # Flight phase distribution charts
+│       ├── route_variance_xxx-xxx.png    # Route variation analysis charts
+│       └── waypoint_density_xxx-xxx.png  # Waypoint density heatmaps for nominal route extraction
+├── historical/                      # Raw historical flight data from AirAsia flights
+│   ├── Historical_AXM706_WSSS-WMKK.csv   # Singapore to Kuala Lumpur historical data (Self-Extracted)
+│   └── Historical_AXM713_WMKK-WSSS.csv   # Kuala Lumpur to Singapore historical data (Self-Extracted)
+├── data/                            # Core data directory
+│   ├── aircraft_data.csv            # Aircraft performance specifications
+│   ├── airports.csv                 # Global airport database (80,000+ airports)
+│   ├── aip/                         # Aeronautical Information Publication data
+│   │   ├── MY_AIP.json              # Malaysia AIP (SIDs, STARs, etc.) (Self-Extracted)
+│   │   └── SG_AIP.json              # Singapore AIP (SIDs, STARs, etc.) (Self-Extracted)
+│   ├── cleaned_historical/          # Processed historical flight data
+│   │   ├── flights_AXMxxx_xxxx-xxxx.csv  # Cleaned flight metadata (e.g. flights_AXM706_WSSS-WMKK.csv)
+│   │   ├── waypoints_AXMxxx_xxxx-xxxx.csv  # Extracted waypoints (e.g. waypoints_AXM706_WSSS-WMKK.csv)
+│   └── nominal/                     # Extracted nominal flight patterns
+│       ├── enroute_patterns.json    # En-route segments of nominal patterns
+│       └── nominal_patterns.json    # Complete nominal patterns with clusters
+└── src/                             # Source code modules
+    ├── __init__.py                  # Package initialization
+    ├── data_processor.py            # Data loading and processing utilities
+    ├── flight_dynamics.py           # Aircraft performance and physics models
+    ├── kalman_smoother.py           # Kalman filter for trajectory smoothing
+    ├── nominal_extractor.py         # Pattern extraction from historical data
+    ├── route_planner.py             # Flight path generation with variations
+    ├── route_smoother.py            # Flight path smoothing with turn constraints
+    └── visualization.py             # Data visualization and KML generation
+```
+
+## How It Works
+
+1. **Data Cleaning:** Raw historical flight data is processed and cleaned.
+2. **Nominal Pattern Extraction:** Extract common flight profiles.
+3. **Airport Selection:** Choose departure and arrival airports.
+4. **Route Planning:** Construct a route using SIDs, STARs, and waypoints.
+5. **Aircraft Performance:** Apply realistic aircraft constraints.
+6. **Flight Dynamics:** Smooth the path with realistic turn modeling and altitude/speed profiles.
+7. **Visualization:** View the generated path in 3D or export it.
+
+## License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
