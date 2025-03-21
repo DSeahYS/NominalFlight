@@ -1,5 +1,6 @@
 # Nominal Flight Path Generator
 
+
 A  flight path generation system producing realistic aircraft trajectories with three levels of variation, built on aircraft physics models and statistical pattern extraction.
 
 ## Overview
@@ -112,6 +113,12 @@ Nominal_Flight_Path_Generator/       # Root project directory
 
 ## General Flow
 ![Tech Sequence](https://github.com/user-attachments/assets/d7ebafc2-d2a6-439c-876f-6b144d3f1ced)
+
+## In Depth Flowchart
+![Full Flowchart](https://github.com/user-attachments/assets/d608ffa0-e45d-4eb3-99e7-2ef7cdff882c)
+
+## Concise Flowchart
+![Concise Flowchart](https://github.com/user-attachments/assets/a642974c-b778-46f6-bd58-6b3b097cf9ca)
   
 ## How It Works
 
