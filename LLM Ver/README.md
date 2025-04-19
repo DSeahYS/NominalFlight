@@ -1,4 +1,4 @@
-# Nominal Flight Path Generator
+# Nominal Flight Path Generator (Updated with LLM)
 
 A  flight path generation system producing realistic aircraft trajectories with three levels of variation, built on aircraft physics models and statistical pattern extraction.
 
@@ -119,6 +119,11 @@ Nominal_Flight_Path_Generator/       # Root project directory
 5. **Aircraft Performance:** Apply realistic aircraft constraints.
 6. **Flight Dynamics:** Smooth the path with realistic turn modeling and altitude/speed profiles.
 7. **Visualization:** View the generated path in 3D or export it.
+
+![image](https://github.com/user-attachments/assets/d79fa428-efdb-41e7-bdae-77a842417237)
+![image](https://github.com/user-attachments/assets/9345d7bf-75b6-4afb-9e7c-e42fa72898de)
+![image](https://github.com/user-attachments/assets/918b6644-78d2-43ca-8499-8fdc2356f040)
+
 
 ## License
 
