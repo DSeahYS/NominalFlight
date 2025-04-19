@@ -1,0 +1,1250 @@
+{
+  "iso_country": "MY",
+  "airports": {
+    "WMKK": {
+      "airport_code": "WMKK",
+      "name": "Kuala Lumpur International Airport",
+      "runways": [
+        {
+          "id": "14L/32R",
+          "length_m": 4019,
+          "width_m": 60,
+          "surface": "Asphalt with grooved sections",
+          "orientation_deg": { "14L": 140, "32R": 320 },
+          "strength": {
+            "PCR_Concrete_m": 241,
+            "PCR_Asphalt_m": 3537,
+            "PCR": "PCR 1179/R/C/W/U"
+          },
+          "geoid_undulation_m": -1.5,
+          "threshold_elev_m": 16.6,
+          "lighting_systems": [
+            "CAT I lighting",
+            "Touchdown zone lights",
+            "PAPI on both sides"
+          ],
+          "usage_policies": {
+            "preferred_departure_runways": ["14L"],
+            "preferred_arrival_runways": ["32R"]
+          },
+          "declared_distances": {
+            "TORA_m": 4000,
+            "TODA_m": 4000,
+            "ASDA_m": 4000
+          }
+        },
+        {
+          "id": "14R/32L",
+          "length_m": 4000,
+          "width_m": 60,
+          "surface": "Asphalt with sections for high load-bearing operations",
+          "orientation_deg": { "14R": 140, "32L": 320 },
+          "strength": "PCR 1179/R/C/W/U",
+          "geoid_undulation_m": -1.4,
+          "threshold_elev_m": 14.5,
+          "lighting_systems": [
+            "CAT I lighting",
+            "Capacitor discharge lights"
+          ],
+          "usage_policies": {
+            "preferred_departure_runways": ["14R"],
+            "preferred_arrival_runways": ["32L"]
+          },
+          "declared_distances": {
+            "TORA_m": 4000,
+            "TODA_m": 4000,
+            "ASDA_m": 4000
+          }
+        }
+      ],
+      "SIDs": [
+        {
+          "name": "PUGER 1A",
+          "runway": "14L",
+          "waypoints": [
+            {
+              "name": "PUGER",
+              "lat": 2.7453,
+              "lon": 101.7096,
+              "alt_min_ft": 3000,
+              "altitude_constraint": "FL310 or below",
+              "type": "Fly-By"
+            },
+            {
+              "name": "RIGTO",
+              "lat": 2.7000,
+              "lon": 101.8000,
+              "alt_min_ft": 5000,
+              "type": "Fly-Over"
+            },
+            {
+              "name": "TOSOD",
+              "lat": 2.7453,
+              "lon": 101.7096,
+              "alt_min_ft": 3000,
+              "altitude_constraint": "FL310 or below",
+              "type": "Intermediate"
+            },
+            {
+              "name": "ADGAB",
+              "lat": 2.7000,
+              "lon": 101.8000,
+              "alt_min_ft": 5000,
+              "type": "Intermediate"
+            }
+          ],
+          "constraints": {
+            "climb_gradient": {
+              "initial": "5%",
+              "secondary": "3.3%"
+            },
+            "max_IAS": {
+              "below_5000_ft": 230,
+              "below_10000_ft": 250
+            }
+          },
+          "remarks": "Maintain 250 KT IAS below 10,000 ft. Climb via RNAV to join ATS Route R461. (Alternate variants exist for different runway transitions.)"
+        },
+        {
+          "name": "KADAR 2A",
+          "runway": "14R",
+          "waypoints": [
+            {
+              "name": "KADAR",
+              "lat": 2.8500,
+              "lon": 101.6700,
+              "alt_min_ft": 4000,
+              "type": "Fly-By"
+            },
+            {
+              "name": "SURGA",
+              "lat": 3.1000,
+              "lon": 101.9000,
+              "alt_min_ft": 9000,
+              "type": "Fly-By",
+              "altitude_constraint": "NIREN: FL270 or below"
+            }
+          ],
+          "constraints": {
+            "climb_gradient": {
+              "initial": "6%",
+              "secondary": "3.5%"
+            },
+            "max_IAS": {
+              "below_5000_ft": 230,
+              "below_10000_ft": 250
+            }
+          },
+          "remarks": "Maintain 250 KT IAS below 10,000 ft. Climb via RNAV to join ATS Route L625. Alternate lateral offsets may be applied."
+        }
+      ],
+      "STARs": [
+        {
+          "name": "NUFFA 1C",
+          "runway": "32L",
+          "waypoints": [
+            {
+              "name": "NUFFA",
+              "lat": 2.9600,
+              "lon": 101.8000,
+              "alt_min_ft": 10000,
+              "alt_max_ft": 20000,
+              "type": "Fly-Over"
+            },
+            {
+              "name": "PIBAP",
+              "lat": 3.0000,
+              "lon": 103.9000,
+              "alt_min_ft": 8000,
+              "type": "Fly-By",
+              "transition_fix": true
+            },
+            {
+              "name": "PASPU",
+              "lat": 3.0200,
+              "lon": 101.9500,
+              "alt_min_ft": 5000,
+              "type": "Fly-Over",
+              "altitude_constraint": "PILAX: (exact constraint not provided; use published profile)"
+            }
+          ],
+          "constraints": {
+            "descent_gradient": "3° glide path",
+            "speed_restrictions": {
+              "below_10000_ft": 250,
+              "base_turn": 220,
+              "localizer_intercept": 185,
+              "final_approach": 160
+            }
+          },
+          "remarks": "Radar vectors to final approach. Arrival via Y514. Time‑of‑day restrictions and altitude curves apply."
+        },
+        {
+          "name": "SALAX 1H",
+          "runway": "32R",
+          "waypoints": [
+            {
+              "name": "SALAX",
+              "lat": 2.8500,
+              "lon": 101.6700,
+              "alt_min_ft": 12000,
+              "alt_max_ft": 20000,
+              "type": "Fly-Over",
+              "altitude_constraint": "FL220 or below"
+            },
+            {
+              "name": "GUPTA",
+              "lat": 2.9600,
+              "lon": 101.8000,
+              "alt_min_ft": 9000,
+              "type": "Fly-By",
+              "altitude_constraint": "FL230 or below"
+            },
+            {
+              "name": "KAKAK",
+              "lat": 3.0000,
+              "lon": 101.8500,
+              "alt_min_ft": 4000,
+              "type": "Fly-By",
+              "altitude_constraint": "FL270 or below"
+            },
+            {
+              "name": "SAROX",
+              "lat": 3.0500,
+              "lon": 101.8000,
+              "alt_min_ft": 4000,
+              "type": "Intermediate",
+              "altitude_constraint": "FL230 or below"
+            }
+          ],
+          "constraints": {
+            "descent_gradient": "3.2° glide path",
+            "speed_restrictions": {
+              "below_10000_ft": 250,
+              "base_turn": 220,
+              "localizer_intercept": 185,
+              "final_approach": 160
+            }
+          },
+          "remarks": "Descent to 3,000 ft after KAKAK for Runway 32R approaches. Different variants exist based on runway and time-of-day."
+        }
+      ],
+      "routes_to_WSSS": [
+        {
+          "route_name": "R461 to WSSS",
+          "waypoints": [
+            { "name": "PUGER", "lat": 2.7453, "lon": 101.7096 },
+            { "name": "RIGTO", "lat": 2.7000, "lon": 101.8000 },
+            { "name": "PIBAP", "lat": 3.0000, "lon": 103.9000 },
+            { "name": "CHANGI", "lat": 1.3500, "lon": 103.9940 }
+          ],
+          "constraints": {
+            "altitude_min_ft": 5000,
+            "speed_max_kts": 250
+          },
+          "remarks": "Direct routing subject to ATC approval."
+        },
+        {
+          "route_name": "ATS Route L625",
+          "waypoints": [
+            { "name": "KADAR", "lat": 2.8500, "lon": 101.6700 },
+            { "name": "SURGA", "lat": 3.1000, "lon": 101.9000 },
+            { "name": "CHANGI", "lat": 1.3500, "lon": 103.9940 }
+          ],
+          "constraints": {
+            "altitude_min_ft": 9000,
+            "speed_max_kts": 250
+          },
+          "remarks": "Transition via ATS Route L625."
+        },
+        {
+          "route_name": "Additional ATS Fixes",
+          "waypoints": [
+            {
+              "name": "PUGER",
+              "lat": "03°23'59\"N",
+              "lon": "100°17'31\"E",
+              "routes": ["G582", "R461"]
+            },
+            {
+              "name": "PULIP",
+              "lat": "03°40'23\"N",
+              "lon": "101°53'48\"E",
+              "routes": ["G466", "Y346", "Y349"]
+            },
+            {
+              "name": "PIBAP",
+              "lat": "03°00'00\"N",
+              "lon": "103°90'00\"E",
+              "routes": ["Y514"]
+            },
+            {
+              "name": "CHANGI",
+              "lat": "01°35'00\"N",
+              "lon": "103°99'40\"E",
+              "routes": ["L625"]
+            },
+            {
+              "name": "POVUS",
+              "lat": "06°00'00\"N",
+              "lon": "094°40'00\"E",
+              "routes": ["P627"]
+            }
+          ]
+        }
+      ],
+      "navigation_aids": [
+        {
+          "type": "VOR/DME",
+          "name": "KLIA_VOR",
+          "frequency_mhz": 113.5,
+          "lat": 2.7450,
+          "lon": 101.7090,
+          "range_nm": 200
+        },
+        {
+          "type": "NDB",
+          "name": "KLIA_NDB",
+          "frequency_khz": 355.0,
+          "lat": 2.0500,
+          "lon": 102.4700,
+          "range_nm": 50
+        },
+        {
+          "type": "ILS",
+          "name": "ILS14L",
+          "frequency_mhz": 110.9,
+          "lat": 2.7500,
+          "lon": 101.7000,
+          "remarks": "Precision approach capability."
+        },
+        {
+          "type": "VOR/DME",
+          "name": "VBA",
+          "frequency_mhz": 114.7,
+          "lat": 2.8000,
+          "lon": 101.8000,
+          "range_nm": 180
+        },
+        {
+          "type": "DVOR/DME",
+          "name": "VKL",
+          "frequency_mhz": 116.1,
+          "lat": 2.9000,
+          "lon": 101.7500,
+          "range_nm": 190
+        },
+        {
+          "type": "NDB",
+          "name": "NDB CE",
+          "frequency_khz": 205,
+          "lat": 2.8500,
+          "lon": 101.8500,
+          "range_nm": 40
+        }
+      ],
+      "airspace": {
+        "FIR_boundaries": {
+          "Kuala_Lumpur_FIR": {
+            "coordinates": [
+              { "lat": 2.0000, "lon": 101.5000 },
+              { "lat": 2.5000, "lon": 102.5000 },
+              { "lat": 2.0000, "lon": 103.0000 }
+            ],
+            "vertical_limits_ft": { "min": 0, "max": 46000 },
+            "interactions": ["Singapore FIR"]
+          }
+        },
+        "airspace_classifications": [
+          {
+            "class": "A",
+            "altitude_min_ft": 15000,
+            "altitude_max_ft": 46000,
+            "horizontal_boundaries": [
+              { "lat": 2.0000, "lon": 101.5000 },
+              { "lat": 2.5000, "lon": 102.5000 },
+              { "lat": 2.0000, "lon": 103.0000 }
+            ],
+            "remarks": "Controlled Airspace, IFR operations only."
+          },
+          {
+            "class": "B",
+            "altitude_min_ft": 0,
+            "altitude_max_ft": 15000,
+            "horizontal_boundaries": [
+              { "lat": 2.1000, "lon": 101.6000 },
+              { "lat": 2.4000, "lon": 102.4000 },
+              { "lat": 2.1000, "lon": 103.1000 }
+            ],
+            "remarks": "Controlled Airspace, VFR and IFR operations."
+          },
+          {
+            "FIR": "Kuala Lumpur FIR",
+            "min_altitude_ft": 0,
+            "max_altitude_ft": 46000,
+            "notes": "Interacts with Singapore FIR"
+          },
+          {
+            "FIR": "Johor Bahru TMA",
+            "min_altitude_ft": 2500,
+            "max_altitude_ft": 24500,
+            "notes": "Controlled terminal airspace"
+          },
+          {
+            "FIR": "Kuala Lumpur CTA",
+            "min_altitude_ft": 15000,
+            "max_altitude_ft": 46000,
+            "notes": "High altitude control zone"
+          }
+        ],
+        "routes": [
+          {
+            "route_name": "R461 to WSSS",
+            "waypoints": [
+              { "name": "PUGER", "lat": 2.7453, "lon": 101.7096 },
+              { "name": "RIGTO", "lat": 2.7000, "lon": 101.8000 },
+              { "name": "PIBAP", "lat": 3.0000, "lon": 103.9000 },
+              { "name": "CHANGI", "lat": 1.3500, "lon": 103.9940 }
+            ],
+            "navigation_aids": ["VOR/DME", "NDB"],
+            "constraints": {
+              "altitude_min_ft": 5000,
+              "speed_max_kts": 250
+            },
+            "remarks": "Subject to tactical ATC rerouting and lateral offset procedures in oceanic segments."
+          },
+          {
+            "route_name": "ATS Route L625",
+            "waypoints": [
+              { "name": "KADAR", "lat": 2.8500, "lon": 101.6700 },
+              { "name": "SURGA", "lat": 3.1000, "lon": 101.9000 },
+              { "name": "CHANGI", "lat": 1.3500, "lon": 103.9940 }
+            ],
+            "navigation_aids": ["VOR/DME"],
+            "constraints": {
+              "altitude_min_ft": 9000,
+              "speed_max_kts": 250
+            },
+            "remarks": "Preferred route for northbound departures."
+          },
+          {
+            "route_name": "Additional ATS Fixes",
+            "waypoints": [
+              {
+                "name": "PUGER",
+                "lat": "03°23'59\"N",
+                "lon": "100°17'31\"E",
+                "routes": ["G582", "R461"]
+              },
+              {
+                "name": "PULIP",
+                "lat": "03°40'23\"N",
+                "lon": "101°53'48\"E",
+                "routes": ["G466", "Y346", "Y349"]
+              },
+              {
+                "name": "PIBAP",
+                "lat": "03°00'00\"N",
+                "lon": "103°90'00\"E",
+                "routes": ["Y514"]
+              },
+              {
+                "name": "CHANGI",
+                "lat": "01°35'00\"N",
+                "lon": "103°99'40\"E",
+                "routes": ["L625"]
+              },
+              {
+                "name": "POVUS",
+                "lat": "06°00'00\"N",
+                "lon": "094°40'00\"E",
+                "routes": ["P627"]
+              }
+            ]
+          }
+        ],
+        "holding_patterns": [
+          {
+            "fix": "PIBAP",
+            "altitudes_ft": { "min": 8000, "max": 20000 },
+            "turn_direction": "Right",
+            "max_speed_kts": 230
+          },
+          {
+            "fix": "HOSBA",
+            "altitudes_ft": { "min": 14000, "max": 25000 },
+            "turn_direction": "Left",
+            "max_speed_kts": 265,
+            "remarks": "In turbulence, max speed may be increased to 280 KT."
+          }
+        ]
+      },
+      "meteorology": {
+        "seasonal_information": {
+          "wet_season": "November - January",
+          "dry_season": "May - July"
+        },
+        "wind_limits": {
+          "14L/32R": {
+            "max_crosswind_kts": 25,
+            "max_tailwind_kts": 10
+          },
+          "14R/32L": {
+            "max_crosswind_kts": 20,
+            "max_tailwind_kts": 8
+          },
+          "above_runway": {
+            "max_crosswind_kts": 25,
+            "max_tailwind_kts": 10
+          }
+        },
+        "visibility_min_m": 800,
+        "hazard_alerts": [
+          {
+            "type": "Bird Migration",
+            "active_periods": [
+              { "start_month": "September", "end_month": "November" },
+              { "start_month": "February", "end_month": "April" }
+            ],
+            "altitude_range_m": { "min": 100, "max": 900 },
+            "remarks": "Increased bird activity affecting flight operations."
+          },
+          {
+            "type": "Low-Level Wind Shear",
+            "system": "MDWR Radar",
+            "coverage_area": "Entire FIR",
+            "procedures": "Immediate climb to last assigned altitude and proceed to NYLON Holding Area."
+          },
+          {
+            "type": "Thunderstorm Area",
+            "coordinates": [
+              { "lat": 2.3000, "lon": 102.5000 },
+              { "lat": 2.3500, "lon": 102.5500 }
+            ],
+            "active_season": "November - January",
+            "remarks": "Avoid entering active thunderstorm cells."
+          }
+        ],
+        "wind_profiles": {
+          "FL320-FL400": "Strong westbound winds present"
+        }
+      },
+      "sun_times": [
+        { "month": "January", "sunrise": "06:50", "sunset": "18:25" },
+        { "month": "February", "sunrise": "06:45", "sunset": "18:35" },
+        { "month": "March", "sunrise": "06:40", "sunset": "18:45" },
+        { "month": "April", "sunrise": "06:35", "sunset": "18:50" },
+        { "month": "May", "sunrise": "06:30", "sunset": "18:55" },
+        { "month": "June", "sunrise": "06:25", "sunset": "19:00" },
+        { "month": "July", "sunrise": "06:20", "sunset": "19:05" },
+        { "month": "August", "sunrise": "06:15", "sunset": "19:10" },
+        { "month": "September", "sunrise": "06:20", "sunset": "19:00" },
+        { "month": "October", "sunrise": "06:30", "sunset": "18:45" },
+        { "month": "November", "sunrise": "06:40", "sunset": "18:35" },
+        { "month": "December", "sunrise": "06:50", "sunset": "18:25" }
+      ],
+      "aircraft_performance": {
+        "speed_limits": {
+          "below_10000_ft": 250,
+          "above_FL240": "Mach-based speed assignments",
+          "base_turn": 220,
+          "localizer_intercept": 185,
+          "final_approach": 160
+        },
+        "climb_performance": {
+          "standard_rate_fpm": 1500,
+          "minimum_climb_alert_fpm": 500,
+          "fuel_burn_rate_kg_per_hour": 2500,
+          "tactical_adjustments": true
+        },
+        "descent_performance": {
+          "standard_rate_fpm": 1800,
+          "adjustments_due_to_ATC": true,
+          "fuel_burn_rate_kg_per_hour": 1800
+        },
+        "wake_turbulence_separation": {
+          "heavy_behind_heavy": "4NM",
+          "medium_behind_heavy": "5NM",
+          "light_behind_heavy": "6NM"
+        }
+      },
+      "dynamic_ATC_instructions": {
+        "tactical_rerouting": "Slot management via BOBCAT system. ATC may re-clear aircraft due to traffic congestion.",
+        "vectoring_policies": {
+          "arrival_phase": "Radar vectors for final approach. Holding at PIBAP if needed.",
+          "departure_phase": "ATC assigns step climb altitudes dynamically."
+        },
+        "weather_deviation_handling": {
+          "self_deviation_allowed": true,
+          "broadcast_requirements": "Pilots must report position every 10 minutes on 121.5 MHz when deviating.",
+          "lateral_offset_requirements": "1-2NM offset for turbulence avoidance in oceanic routes."
+        },
+        "low_visibility_procedures": {
+          "LVP_in_effect": true,
+          "min_visibility_m": 600,
+          "autoland_required_for_category_II_III": true
+        },
+        "slot_management": {
+          "westbound_departures": {
+            "slot_hours": "0000-1200 UTC -> 2000-2359 UTC",
+            "priority_slot_range": "FL280-FL390"
+          }
+        },
+        "vectoring_and_conflict_avoidance": {
+          "historical_variability_modeling": true,
+          "rerouting_for_congestion": true
+        }
+      },
+      "variability_conflict_resolution": {
+        "conflict_avoidance_methods": ["Vertical separation", "Lateral offsets", "Flow management"],
+        "strategic_lateral_offset_procedures": {
+          "routes": ["P628", "L510", "N571", "P574", "P627"],
+          "offsets": ["1NM right offset", "2NM right offset"],
+          "purpose": "Wake turbulence avoidance"
+        },
+        "slot_management": "AWUT system used for takeoff sequencing. Delays expected during peak hours.",
+        "historical_data_usage": "Air traffic patterns analyzed to optimize flight routing.",
+        "holding_pattern_adjustments": "Holding speeds and entry/exit times are dynamically updated based on real-time congestion."
+      }
+    },
+    "WMAP": {
+      "airport_code": "WMAP",
+      "name": "Kluang Airport",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [],
+      "airspace": {},
+      "meteorology": {},
+      "sun_times": [],
+      "aircraft_performance": {},
+      "dynamic_ATC_instructions": {},
+      "variability_conflict_resolution": {}
+    },
+    "WMBT": {
+      "airport_code": "WMBT",
+      "name": "Tioman Airport",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [],
+      "airspace": {},
+      "meteorology": {},
+      "sun_times": [],
+      "aircraft_performance": {},
+      "dynamic_ATC_instructions": {},
+      "variability_conflict_resolution": {}
+    },
+    "WMGK": {
+      "airport_code": "WMGK",
+      "name": "Gong Kedak Airport",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [],
+      "airspace": {},
+      "meteorology": {},
+      "sun_times": [],
+      "aircraft_performance": {},
+      "dynamic_ATC_instructions": {},
+      "variability_conflict_resolution": {}
+    },
+    "WMKA": {
+      "airport_code": "WMKA",
+      "name": "Sultan Abdul Halim Airport",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [],
+      "airspace": {},
+      "meteorology": {},
+      "sun_times": [],
+      "aircraft_performance": {},
+      "dynamic_ATC_instructions": {},
+      "variability_conflict_resolution": {}
+    },
+    "WMKB": {
+      "airport_code": "WMKB",
+      "name": "RMAF Butterworth Air Base",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [],
+      "airspace": {},
+      "meteorology": {},
+      "sun_times": [],
+      "aircraft_performance": {},
+      "dynamic_ATC_instructions": {},
+      "variability_conflict_resolution": {}
+    },
+    "WMKC": {
+      "airport_code": "WMKC",
+      "name": "Sultan Ismail Petra Airport",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [],
+      "airspace": {},
+      "meteorology": {},
+      "sun_times": [],
+      "aircraft_performance": {},
+      "dynamic_ATC_instructions": {},
+      "variability_conflict_resolution": {}
+    },
+    "WMKD": {
+      "airport_code": "WMKD",
+      "name": "Kuantan Airport",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [],
+      "airspace": {
+        "routes": [
+          {
+            "route_name": "Kuantan Departure",
+            "waypoints": [
+              { "name": "KTN1", "lat": 3.7830, "lon": 103.2110 }
+            ],
+            "navigation_aids": ["NDB"],
+            "constraints": {
+              "altitude_min_ft": 5000,
+              "speed_max_kts": 220
+            },
+            "remarks": "Speed restrictions apply below FL100."
+          }
+        ]
+      },
+      "meteorology": {},
+      "sun_times": [],
+      "aircraft_performance": {},
+      "dynamic_ATC_instructions": {},
+      "variability_conflict_resolution": {}
+    },
+    "WMKE": {
+      "airport_code": "WMKE",
+      "name": "Kerteh Airport",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [],
+      "airspace": {},
+      "meteorology": {},
+      "sun_times": [],
+      "aircraft_performance": {},
+      "dynamic_ATC_instructions": {},
+      "variability_conflict_resolution": {}
+    },
+    "WMKF": {
+      "airport_code": "WMKF",
+      "name": "Simpang Airport",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [],
+      "airspace": {},
+      "meteorology": {},
+      "sun_times": [],
+      "aircraft_performance": {},
+      "dynamic_ATC_instructions": {},
+      "variability_conflict_resolution": {}
+    },
+    "WMKI": {
+      "airport_code": "WMKI",
+      "name": "Sultan Azlan Shah Airport",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [],
+      "airspace": {},
+      "meteorology": {},
+      "sun_times": [],
+      "aircraft_performance": {},
+      "dynamic_ATC_instructions": {},
+      "variability_conflict_resolution": {}
+    },
+    "WMKJ": {
+      "airport_code": "WMKJ",
+      "name": "Senai International Airport",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [],
+      "airspace": {},
+      "meteorology": {},
+      "sun_times": [],
+      "aircraft_performance": {},
+      "dynamic_ATC_instructions": {},
+      "variability_conflict_resolution": {}
+    },
+    "WMKL": {
+      "airport_code": "WMKL",
+      "name": "Langkawi International Airport",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [
+        {
+          "type": "VOR/DME",
+          "name": "LGK_VOR",
+          "frequency_mhz": 116.8,
+          "lat": 6.3460,
+          "lon": 99.7280,
+          "range_nm": 150
+        }
+      ],
+      "airspace": {
+        "routes": [
+          {
+            "route_name": "Langkawi Approach",
+            "waypoints": [
+              { "name": "LGM", "lat": 6.3460, "lon": 99.7280 },
+              { "name": "KETAM", "lat": 6.2500, "lon": 100.4500 }
+            ],
+            "navigation_aids": ["VOR/DME"],
+            "constraints": {
+              "altitude_min_ft": 4000,
+              "speed_max_kts": 210
+            },
+            "remarks": "ATC sequencing in effect for peak hours."
+          }
+        ]
+      },
+      "meteorology": {},
+      "sun_times": [],
+      "aircraft_performance": {
+        "speed_limits": {
+          "below_10000_ft": 250,
+          "above_FL240": "Mach-based speed assignments"
+        },
+        "climb_performance": {
+          "standard_rate_fpm": 1400,
+          "minimum_climb_alert": 600
+        },
+        "descent_performance": {
+          "standard_rate_fpm": 1600,
+          "adjustments_due_to_ATC": true
+        }
+      },
+      "dynamic_ATC_instructions": {
+        "vectoring_policies": {
+          "arrival_phase": "Tactical vectoring in use for aircraft spacing during peak hours."
+        },
+        "weather_deviation_handling": {
+          "self_deviation_allowed": true,
+          "broadcast_requirements": "Report deviations on emergency frequency if lost."
+        }
+      },
+      "variability_conflict_resolution": {
+        "conflict_avoidance_methods": ["Holding pattern usage", "Runway alternation during peak hours"],
+        "slot_management": "Managed by local ATC; minor delays expected during high traffic."
+      }
+    },
+    "WMKM": {
+      "airport_code": "WMKM",
+      "name": "Malacca International Airport",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [],
+      "airspace": {},
+      "meteorology": {},
+      "sun_times": [],
+      "aircraft_performance": {},
+      "dynamic_ATC_instructions": {},
+      "variability_conflict_resolution": {}
+    },
+    "WMKN": {
+      "airport_code": "WMKN",
+      "name": "Sultan Mahmud Airport",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [],
+      "airspace": {},
+      "meteorology": {},
+      "sun_times": [],
+      "aircraft_performance": {},
+      "dynamic_ATC_instructions": {},
+      "variability_conflict_resolution": {}
+    },
+    "WMSA": {
+      "airport_code": "WMSA",
+      "name": "Sultan Abdul Aziz Shah International Airport",
+      "runways": [
+        {
+          "id": "Runway1",
+          "length_m": 0,
+          "width_m": 0,
+          "surface": "",
+          "orientation_deg": { "": 0 },
+          "strength": "",
+          "threshold_elev_m": { "": 0.0 },
+          "usage_policies": {
+            "preferred_departure_runways": [],
+            "preferred_arrival_runways": []
+          },
+          "declared_distances": {
+            "TORA_m": 0,
+            "TODA_m": 0,
+            "ASDA_m": 0
+          }
+        }
+      ],
+      "SIDs": [],
+      "STARs": [],
+      "navigation_aids": [
+        {
+          "type": "VOR/DME",
+          "name": "SAA_VOR",
+          "frequency_mhz": 112.3,
+          "lat": 3.05,
+          "lon": 101.6,
+          "range_nm": 180
+        }
+      ],
+      "airspace": {
+        "routes": [
+          {
+            "route_name": "Approach to WMSA",
+            "waypoints": [
+              { "name": "WMSA_T1", "lat": 3.05, "lon": 101.6 }
+            ],
+            "navigation_aids": ["VOR/DME"],
+            "constraints": {
+              "altitude_min_ft": 5000,
+              "speed_max_kts": 250
+            },
+            "remarks": "Subject to ATC sequencing with runway alternation based on noise abatement."
+          }
+        ]
+      },
+      "meteorology": {
+        "seasonal_information": {
+          "wet_season": "November - January",
+          "dry_season": "May - July"
+        },
+        "wind_limits": {
+          "above_runway": {
+            "max_crosswind_kts": 25,
+            "max_tailwind_kts": 10
+          }
+        },
+        "visibility_min_m": 800,
+        "hazard_alerts": [
+          {
+            "type": "Bird Migration",
+            "active_periods": [
+              { "start_month": "September", "end_month": "November" },
+              { "start_month": "February", "end_month": "April" }
+            ],
+            "altitude_range_m": { "min": 100, "max": 900 },
+            "remarks": "Increased bird activity affecting flight operations."
+          }
+        ],
+        "thunderstorm_avoidance_area": {
+          "coordinates": [
+            { "lat": 2.3000, "lon": 102.5000 },
+            { "lat": 2.3500, "lon": 102.5500 }
+          ]
+        }
+      },
+      "sun_times": [
+        { "month": "January", "sunrise": "06:50", "sunset": "18:25" },
+        { "month": "February", "sunrise": "06:45", "sunset": "18:35" },
+        { "month": "March", "sunrise": "06:40", "sunset": "18:45" },
+        { "month": "April", "sunrise": "06:35", "sunset": "18:50" },
+        { "month": "May", "sunrise": "06:30", "sunset": "18:55" },
+        { "month": "June", "sunrise": "06:25", "sunset": "19:00" },
+        { "month": "July", "sunrise": "06:20", "sunset": "19:05" },
+        { "month": "August", "sunrise": "06:15", "sunset": "19:10" },
+        { "month": "September", "sunrise": "06:20", "sunset": "19:00" },
+        { "month": "October", "sunrise": "06:30", "sunset": "18:45" },
+        { "month": "November", "sunrise": "06:40", "sunset": "18:35" },
+        { "month": "December", "sunrise": "06:50", "sunset": "18:25" }
+      ],
+      "aircraft_performance": {},
+      "dynamic_ATC_instructions": {
+        "speed_control": {
+          "above_FL240": "Mach-based control",
+          "below_10000_ft": 250,
+          "approach_phase": "ATC may reduce speeds to 180 KT IAS for spacing."
+        },
+        "runway_alternation": {
+          "traffic_flow": "Runway usage alternates based on noise abatement policies.",
+          "night_operations": "Only specific runways available for night landings."
+        }
+      },
+      "noise_abatement": {
+        "departure_procedures": "Thrust reduction required after takeoff. Steep climb recommended.",
+        "arrival_speed_restrictions": "Below 10,000 ft, aircraft must maintain below 250 KT IAS unless exempt."
+      },
+      "variability_conflict_resolution": {}
+    }
+  }
+}

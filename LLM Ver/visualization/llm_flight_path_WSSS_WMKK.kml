@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Flight Path</name>
+    <Style id="lineStyle">
+      <LineStyle>
+        <color>ff0000ff</color> <!-- Blue color -->
+        <width>2</width>
+      </LineStyle>
+    </Style>
+    <Placemark>
+      <name>Route</name>
+      <styleUrl>#lineStyle</styleUrl>
+      <LineString>
+        <extrude>1</extrude>
+        <tessellate>1</tessellate>
+        <altitudeMode>absolute</altitudeMode> <!-- Use absolute altitude -->
+        <coordinates>
+        103.994003,1.35019,30.48
+          103.95,1.4,3657.6000000000004
+          103.75,1.65,6705.6
+          103.55,1.9,8839.2
+          103.35,2.15,8839.2
+          103.15,2.4,8839.2
+          102.95,2.6,7088.9575206861455
+          101.709999,2.74558,30.48
+        </coordinates>
+      </LineString>
+    </Placemark>
+    
+    <Placemark>
+      <name>WSSS</name>
+      <description>Altitude: 100 ft, Speed: 60 kts</description>
+      <Point>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>103.994003,1.35019,30.48</coordinates> <!-- KML uses lon,lat,alt(meters) -->
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ENR1</name>
+      <description>Altitude: 12000.0 ft, Speed: 280 kts</description>
+      <Point>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>103.95,1.4,3657.6000000000004</coordinates> <!-- KML uses lon,lat,alt(meters) -->
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ENR2</name>
+      <description>Altitude: 22000.0 ft, Speed: 320 kts</description>
+      <Point>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>103.75,1.65,6705.6</coordinates> <!-- KML uses lon,lat,alt(meters) -->
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ENR3</name>
+      <description>Altitude: 29000.0 ft, Speed: 350 kts</description>
+      <Point>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>103.55,1.9,8839.2</coordinates> <!-- KML uses lon,lat,alt(meters) -->
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ENR4</name>
+      <description>Altitude: 29000.0 ft, Speed: 350 kts</description>
+      <Point>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>103.35,2.15,8839.2</coordinates> <!-- KML uses lon,lat,alt(meters) -->
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ENR5</name>
+      <description>Altitude: 29000.0 ft, Speed: 320 kts</description>
+      <Point>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>103.15,2.4,8839.2</coordinates> <!-- KML uses lon,lat,alt(meters) -->
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>ENR6</name>
+      <description>Altitude: 23257.734647920424 ft, Speed: 280 kts</description>
+      <Point>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>102.95,2.6,7088.9575206861455</coordinates> <!-- KML uses lon,lat,alt(meters) -->
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>WMKK</name>
+      <description>Altitude: 100 ft, Speed: 60 kts</description>
+      <Point>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>101.709999,2.74558,30.48</coordinates> <!-- KML uses lon,lat,alt(meters) -->
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
