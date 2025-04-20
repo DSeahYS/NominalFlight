@@ -1,4 +1,4 @@
-# Final Year Project\8. New Airbus Synthetic Flight Generator (Nominal)\src\route_planner.py
+# \src\route_planner.py
 
 import logging
 import numpy as np
