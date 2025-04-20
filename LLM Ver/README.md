@@ -1,70 +1,53 @@
-# Nominal Flight Path Generator (Updated with LLM)
+# Flight Path Generator (Updated with LLM)
 
-A  flight path generation system producing realistic aircraft trajectories with three levels of variation, built on aircraft physics models and statistical pattern extraction.
+A flight path generation system producing realistic aircraft trajectories with physics-based modeling, statistical pattern extraction, and AI-powered route generation through Large Language Model integration.
 
 ## Overview
 
-The **Nominal Flight Path Generator** creates realistic flight trajectories between airports based on historical data patterns and aircraft performance constraints. The system generates three distinct types of routes for comparison:
+The **Flight Path Generator** creates realistic flight trajectories between airports based on historical data patterns and aircraft performance constraints. The system generates three distinct types of routes for comparison:
 
-- **Nominal routes (red lines):** Authentic flight paths extracted from historical AirAsia flight data, representing the most common trajectory between airports.
-- **Strictly nominal routes (green lines):** Controlled variations that closely follow nominal paths with small, deterministic deviations using sinusoidal patterns.
-- **Synthetic routes (blue lines):** Realistic alternative paths with larger variations that still adhere to aircraft physics constraints.
+Nominal routes (red lines): Authentic flight paths extracted from historical AirAsia flight data, representing the most common trajectory between airports.
+Strictly nominal routes (green lines): Controlled variations that closely follow nominal paths with small, deterministic deviations using sinusoidal patterns.
+Synthetic routes (blue lines): Realistic alternative paths with larger variations that still adhere to aircraft physics constraints.
+LLM-generated routes: AI-powered routes created by a Large Language Model with aviation-specific context, enabling natural language instruction for route customization.
 
 All generated routes respect real-world aircraft performance limitations, including minimum turn radius calculations based on speed and bank angle constraints.
 
 ## Features
 
-- **Triple comparison visualization:** View nominal, strictly nominal, and synthetic routes side-by-side.
-- **Physics-based constraints:** Realistic turn radius calculations based on aircraft speed.
-- **Kalman filter smoothing:** Advanced trajectory smoothing for realistic path generation.
-- **Correlated variations:** Continuous, smooth variations instead of independent point randomization.
-- **Customizable variation levels:** Control the amount of deviation from nominal paths.
-- **Aircraft performance models:** Routes respect aircraft-specific performance characteristics.
-- **SID/STAR integration:** Incorporates real-world departure and arrival procedures.
-- **KML export:** Generate visualization files compatible with Google Earth.
-- **Interactive UI:** User-friendly interface for route generation and visualization.
+Triple comparison visualization: View nominal, strictly nominal, and synthetic routes side-by-side.
+Physics-based constraints: Realistic turn radius calculations based on aircraft speed.
+Kalman filter smoothing: Advanced trajectory smoothing for realistic path generation.
+Correlated variations: Continuous, smooth variations instead of independent point randomization.
+Customizable variation levels: Control the amount of deviation from nominal paths.
+Aircraft performance models: Routes respect aircraft-specific performance characteristics.
+SID/STAR integration: Incorporates real-world departure and arrival procedures.
+KML export: Generate visualization files compatible with Google Earth.
+Interactive UI: User-friendly interface for route generation and visualization.
+LLM integration: Generate routes using Google's Gemini Pro model with contextual aviation knowledge.
+Template-based KML generation: Optimized KML output for LLM-generated routes.
+Custom route constraints: Add natural language constraints like "add circling" for specialized route patterns.
 
 ## Usage
 
-### GUI Mode
 
-1. Launch the application without parameters:  
-   ```sh
-   python main.py
-   ```
-2. Select aircraft type from the dropdown menu.
-3. Choose departure and arrival airports.
-4. Adjust settings (variation level, detail level, etc.).
-5. Click **"Generate Flight Path"** to create routes.
-6. Use **"Visualize Last Generated"** to view the paths.
-
-### Command Line Mode
-
-Generate a single route:
-```sh
-python main.py --departure WSSS --arrival WMKK --aircraft A320-214 --visualize
-```
-
-Generate multiple routes with variation:
-```sh
-python main.py --departure WSSS --arrival WMKK --aircraft A320-214 --routes 5 --visualize
-```
-
-## Interface Instructions
+### Interface Instructions
 
 The application interface includes:
 
-### Basic Options:
-- **Aircraft Selection:** Choose from various Airbus models.
-- **Airport Selection:** Search and select from 80,000+ global airports.
+#### Basic Options:
+Aircraft Selection: Choose from various Airbus models.
+Airport Selection: Search and select from 80,000+ global airports.
+LLM Generation: Toggle option for AI-powered route generation.
+LLM Constraints: Text field for natural language route instructions.
 
-### Advanced Options:
-- **Detail Level:** Controls waypoint density (**Low/Medium/High**).
-- **Route Count:** Number of synthetic routes to generate (**1-20**).
-- **Variation Level:** Controls deviation from nominal path (**0.05-0.4**).
-- **Strict Nominal Deviation:** Controls green line deviation amount (**km**).
-- **Visualization Options:** KML/JSON/CSV output formats.
-- **Status Bar:** Shows progress and operation information.
+#### Advanced Options:
+Detail Level: Controls waypoint density (Low/Medium/High).
+Route Count: Number of synthetic routes to generate (1-20).
+Variation Level: Controls deviation from nominal path (0.05-0.4).
+Strict Nominal Deviation: Controls green line deviation amount (km).
+Visualization Options: KML/JSON/CSV output formats.
+Status Bar: Shows progress and operation information.
 
 ## Project Structure
 
@@ -108,6 +91,9 @@ Nominal_Flight_Path_Generator/       # Root project directory
     ├── route_planner.py             # Flight path generation with variations
     ├── route_smoother.py            # Flight path smoothing with turn constraints
     └── visualization.py             # Data visualization and KML generation
+    └── llm_route_generator.py       # LLM integration for AI-powered route generation
+    └── validation.py                # Valdation of all routes (Currently not properly integrated)
+
 ```
 
 ## How It Works
@@ -115,10 +101,18 @@ Nominal_Flight_Path_Generator/       # Root project directory
 1. **Data Cleaning:** Raw historical flight data is processed and cleaned.
 2. **Nominal Pattern Extraction:** Extract common flight profiles.
 3. **Airport Selection:** Choose departure and arrival airports.
-4. **Route Planning:** Construct a route using SIDs, STARs, and waypoints.
+4. **Route Planning:** Construct a route using SIDs, STARs, and waypoints., LLM-Based: Provide aviation context to Gemini Pro model to generate contextually relevant routes.
 5. **Aircraft Performance:** Apply realistic aircraft constraints.
 6. **Flight Dynamics:** Smooth the path with realistic turn modeling and altitude/speed profiles.
 7. **Visualization:** View the generated path in 3D or export it.
+
+## LLM Integration
+The system integrates with Google's Gemini Pro model through OpenRouter API to generate aviation-aware flight routes:
+Context Enrichment: Extracts relevant data from AIPs and historical patterns to inform the LLM.
+Natural Language Constraints: Add special instructions like "add circling approach" or weather avoidance.
+Optimized Visualization: Special KML template-based rendering for LLM-generated routes.
+Secure API Management: API keys stored in environment variables for secure access.
+For local deployment with enhanced security, the system supports configuring with local LLMs like Phi-4, though this requires additional hardware resources for optimal performance.
 
 ![image](https://github.com/user-attachments/assets/d79fa428-efdb-41e7-bdae-77a842417237)
 ![image](https://github.com/user-attachments/assets/9345d7bf-75b6-4afb-9e7c-e42fa72898de)
@@ -126,5 +120,4 @@ Nominal_Flight_Path_Generator/       # Root project directory
 
 
 ## License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+Under NTU-Airbus Industry Sponsored FYP
