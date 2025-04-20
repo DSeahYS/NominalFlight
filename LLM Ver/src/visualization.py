@@ -10,7 +10,10 @@ import socketserver
 import threading
 import functools # Added import
 import copy
-import logging # Add logging
+import logging
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
 
 # Import LLM KML templates
 try:
@@ -223,10 +226,16 @@ def save_combined_kml(nominal_route, synthetic_routes, departure, arrival, outpu
     # Generate the KML file using the updated generate_kml
     return generate_kml(all_routes, output_file)
 
-def visualize_flight_paths(flight_paths, title="Flight Path Visualization"):
+
+def visualize_flight_paths(flight_paths, title="Flight Path Visualization", validation_results=None):
     """
-    Visualize flight paths using a local web server and browser.
-    (Original function from file)
+    Visualize flight paths and optionally validation metrics using a local web server and browser.
+
+    Args:
+        flight_paths: List of routes to visualize.
+        title: Title for the visualization.
+        validation_results: Optional dictionary containing validation results from validate_route().
+                            If provided, PNG plots will be generated.
     """
     # Create directory if it doesn't exist
     viz_dir = 'visualization'
@@ -237,12 +246,23 @@ def visualize_flight_paths(flight_paths, title="Flight Path Visualization"):
     saved_kml = save_kml(flight_paths, kml_file_path)
 
     if not saved_kml:
-         logging.error("KML file generation failed. Cannot visualize.")
-         # Optionally show a message box if in a GUI context
-         return
+        logging.error("KML file generation failed. Cannot visualize KML.")
+        # Still proceed if only plots are needed? Or return? Let's return for now.
+        return
 
-    # Create HTML viewer
-    html_file = create_html_viewer('flight_paths.kml', os.path.join(viz_dir, 'index.html')) # Pass full path
+    # Generate validation plots if results are provided
+    plot_files = []
+    if validation_results:
+        try:
+            plot_files = plot_validation_metrics(validation_results) # Call the plotting function
+            logging.info(f"Generated validation plots: {plot_files}")
+        except Exception as e:
+            logging.error(f"Failed to generate validation plots: {e}")
+            # Continue visualization even if plots fail? Yes.
+
+    # Create HTML viewer (always create, even if KML failed, maybe show plots?)
+    # Let's stick to only showing KML for now. If KML fails, we return.
+    html_file = create_html_viewer('flight_paths.kml', os.path.join(viz_dir, 'index.html')) # Pass relative KML path for HTML
 
     # Start a simple HTTP server to serve the visualization directory
     # We use functools.partial to set the directory for the handler,
@@ -302,6 +322,71 @@ def visualize_with_nominal(synthetic_routes, nominal_route, title="Flight Path C
 
     # Call regular visualization
     visualize_flight_paths(all_routes, title)
+
+def plot_validation_metrics(validation_results, output_dir='visualization/validation_plots'):
+    """
+    Generate plots for validation metrics.
+    
+    Args:
+        validation_results: Dict from validate_route()
+        output_dir: Directory to save plots
+        
+    Returns:
+        List of generated plot file paths
+    """
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
+    plots = []
+    
+    # 1. Cross-track error plot
+    if 'xte_stats' in validation_results:
+        plt.figure(figsize=(10, 5))
+        plt.plot(validation_results['xte_stats']['xte_values'], label='Cross-track Error (nm)')
+        plt.axhline(y=validation_results['xte_stats']['max_xte'],
+                   color='r', linestyle='--', label='Max allowed')
+        plt.title('Cross-track Error Along Route')
+        plt.xlabel('Waypoint Index')
+        plt.ylabel('Error (nm)')
+        plt.legend()
+        plot_path = f"{output_dir}/xte_plot.png"
+        plt.savefig(plot_path)
+        plots.append(plot_path)
+        plt.close()
+    
+    # 2. Turn radius compliance plot
+    if 'turn_radius_violations' in validation_results:
+        plt.figure(figsize=(10, 5))
+        turns = validation_results['turn_radius_violations']
+        indices = [t[0] for t in turns]
+        actual = [t[1] for t in turns]
+        required = [t[2] for t in turns]
+        
+        plt.scatter(indices, actual, label='Actual Radius')
+        plt.scatter(indices, required, label='Required Radius')
+        plt.title('Turn Radius Compliance')
+        plt.xlabel('Waypoint Index')
+        plt.ylabel('Radius (km)')
+        plt.legend()
+        plot_path = f"{output_dir}/turn_radius_plot.png"
+        plt.savefig(plot_path)
+        plots.append(plot_path)
+        plt.close()
+    
+    # 3. Altitude profile comparison
+    if 'altitude_profile' in validation_results:
+        plt.figure(figsize=(10, 5))
+        plt.plot(validation_results['altitude_profile']['actual'], label='Generated')
+        if 'reference' in validation_results['altitude_profile']:
+            plt.plot(validation_results['altitude_profile']['reference'], label='Nominal')
+        plt.title('Altitude Profile Comparison')
+        plt.xlabel('Waypoint Index')
+        plt.ylabel('Altitude (ft)')
+        plt.legend()
+        plot_path = f"{output_dir}/altitude_profile.png"
+        plt.savefig(plot_path)
+        plots.append(plot_path)
+        plt.close()
+    
+    return plots
 
 def create_html_viewer(kml_filename, output_file='visualization/index.html'):
     """
