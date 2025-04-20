@@ -1,4 +1,4 @@
-# Final Year Project\8. New Airbus Synthetic Flight Generator (Nominal)\src\flight_dynamics.py
+# \src\flight_dynamics.py
 
 import csv
 import math
