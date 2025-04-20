@@ -1,4 +1,4 @@
-# Final Year Project\8. New Airbus Synthetic Flight Generator (Nominal)\src\route_smoother.py
+# \src\route_smoother.py
 
 import numpy as np
 from scipy.interpolate import CubicSpline
