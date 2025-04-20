@@ -1,4 +1,4 @@
-# Final Year Project\8. New Airbus Synthetic Flight Generator (Nominal)\src\data_processor.py
+# \src\data_processor.py
 
 import csv
 import os
