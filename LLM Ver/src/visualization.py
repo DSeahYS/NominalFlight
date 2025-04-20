@@ -1,4 +1,4 @@
-# Final Year Project\10. New Airbus Synthetic Flight Generator (Researched)\src\visualization.py
+# F\src\visualization.py
 # Modified to handle LLM KML generation via templating
 
 import simplekml
