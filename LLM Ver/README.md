@@ -95,6 +95,14 @@ Nominal_Flight_Path_Generator/       # Root project directory
     └── validation.py                # Valdation of all routes (Currently not properly integrated)
 
 ```
+## General Flow
+![Tech Sequence](https://github.com/user-attachments/assets/d7ebafc2-d2a6-439c-876f-6b144d3f1ced)
+
+## In Depth Flowchart
+![Full Flowchart](https://github.com/user-attachments/assets/d608ffa0-e45d-4eb3-99e7-2ef7cdff882c)
+
+## Concise Flowchart
+![Concise Flowchart](https://github.com/user-attachments/assets/a642974c-b778-46f6-bd58-6b3b097cf9ca)
 
 ## How It Works
 
@@ -114,6 +122,24 @@ Optimized Visualization: Special KML template-based rendering for LLM-generated 
 Secure API Management: API keys stored in environment variables for secure access.
 For local deployment with enhanced security, the system supports configuring with local LLMs like Phi-4, though this requires additional hardware resources for optimal performance.
 
+## Sample Workflow
+
+# Sample Raw Data
+![image](https://github.com/user-attachments/assets/238d9f72-31f8-4ee8-a509-5aaeeb1e45a8)
+
+# Cleaned with Data_cleaner.py
+![image](https://github.com/user-attachments/assets/07e47106-b958-47bc-8912-a4a7f6459d29)
+
+# Extraction of Nominal Information
+![image](https://github.com/user-attachments/assets/531c1ae6-8993-4c61-8c61-d4a3c9b8c5df)
+![image](https://github.com/user-attachments/assets/9d1f3dc4-a225-416a-8dcb-4c2262ca61bf)
+![image](https://github.com/user-attachments/assets/ba81469c-29f1-415b-8924-41b0d0467c34)
+![image](https://github.com/user-attachments/assets/23f99015-a08f-4d83-81f5-4d746c54296e)
+
+# UI Generated
+![image](https://github.com/user-attachments/assets/97b1fca7-debf-4b46-bffb-5bcc659c0721)
+
+# LLM Portion
 ![image](https://github.com/user-attachments/assets/d79fa428-efdb-41e7-bdae-77a842417237)
 ![image](https://github.com/user-attachments/assets/9345d7bf-75b6-4afb-9e7c-e42fa72898de)
 ![image](https://github.com/user-attachments/assets/918b6644-78d2-43ca-8499-8fdc2356f040)
