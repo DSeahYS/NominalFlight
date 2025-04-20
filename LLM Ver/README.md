@@ -117,6 +117,8 @@ For local deployment with enhanced security, the system supports configuring wit
 ![image](https://github.com/user-attachments/assets/d79fa428-efdb-41e7-bdae-77a842417237)
 ![image](https://github.com/user-attachments/assets/9345d7bf-75b6-4afb-9e7c-e42fa72898de)
 ![image](https://github.com/user-attachments/assets/918b6644-78d2-43ca-8499-8fdc2356f040)
+![image](https://github.com/user-attachments/assets/819bbe56-4c7d-4b17-bd73-2ab018f4f80d)
+![image](https://github.com/user-attachments/assets/cc46d90d-e028-49fd-a176-3f159694e56d)
 
 
 ## License
