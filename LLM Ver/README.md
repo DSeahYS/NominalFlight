@@ -136,10 +136,10 @@ For local deployment with enhanced security, the system supports configuring wit
 ![image](https://github.com/user-attachments/assets/ba81469c-29f1-415b-8924-41b0d0467c34)
 ![image](https://github.com/user-attachments/assets/23f99015-a08f-4d83-81f5-4d746c54296e)
 
-# UI Generated
+# UI Generated (Previous Version)
 ![image](https://github.com/user-attachments/assets/97b1fca7-debf-4b46-bffb-5bcc659c0721)
 
-# LLM Portion
+# LLM Portion (New Version)
 ![image](https://github.com/user-attachments/assets/d79fa428-efdb-41e7-bdae-77a842417237)
 ![image](https://github.com/user-attachments/assets/9345d7bf-75b6-4afb-9e7c-e42fa72898de)
 ![image](https://github.com/user-attachments/assets/918b6644-78d2-43ca-8499-8fdc2356f040)
