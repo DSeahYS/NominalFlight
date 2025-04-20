@@ -1,4 +1,4 @@
-# Final Year Project\8. New Airbus Synthetic Flight Generator (Nominal)\src\nominal_extractor.py
+# \src\nominal_extractor.py
 
 import numpy as np
 import pandas as pd
