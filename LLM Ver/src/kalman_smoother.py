@@ -1,4 +1,4 @@
-# Final Year Project\8. New Airbus Synthetic Flight Generator (Nominal)\src\kalman_smoother.py
+# \src\kalman_smoother.py
 
 import numpy as np
 from scipy import linalg
