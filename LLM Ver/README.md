@@ -1,4 +1,4 @@
-# Flight Path Generator (Updated with LLM)
+# Flight Path Generator
 
 A flight path generation system producing realistic aircraft trajectories with physics-based modeling, statistical pattern extraction, and AI-powered route generation through Large Language Model integration.
 
@@ -113,6 +113,7 @@ Nominal_Flight_Path_Generator/       # Root project directory
 5. **Aircraft Performance:** Apply realistic aircraft constraints.
 6. **Flight Dynamics:** Smooth the path with realistic turn modeling and altitude/speed profiles.
 7. **Visualization:** View the generated path in 3D or export it.
+8. **Validation:** Validation of all the data according to real historical flights (in progress)
 
 ## LLM Integration
 The system integrates with Google's Gemini Pro model through OpenRouter API to generate aviation-aware flight routes:
