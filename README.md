@@ -11,7 +11,7 @@ The **Nominal Flight Path Generator** creates realistic flight trajectories betw
 - **Strictly nominal routes (green lines):** Controlled variations that closely follow nominal paths with small, deterministic deviations using sinusoidal patterns.
 - **Synthetic routes (blue lines):** Realistic alternative paths with larger variations that still adhere to aircraft physics constraints.
 
-All generated routes respect real-world aircraft performance limitations, including minimum turn radius calculations based on speed and bank angle constraints.
+All generated routes respect real-world aircraft performance limitations, including minimum turn radius calculations based on speed and bank angle constraints. (currently there's a bug where there are too many feature conflicts)
 
 ## Features
 
