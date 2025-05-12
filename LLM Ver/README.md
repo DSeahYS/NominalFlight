@@ -109,7 +109,7 @@ Nominal_Flight_Path_Generator/       # Root project directory
 1. **Data Cleaning:** Raw historical flight data is processed and cleaned.
 2. **Nominal Pattern Extraction:** Extract common flight profiles.
 3. **Airport Selection:** Choose departure and arrival airports.
-4. **Route Planning:** Construct a route using SIDs, STARs, and waypoints., LLM-Based: Provide aviation context to Gemini Pro model to generate contextually relevant routes.
+4. **Route Planning:** Construct a route using SIDs, STARs, and waypoints., LLM-Based: Provide aviation context to Gemini Pro model to generate contextually relevant routes. (Can be any models, but according to lit review, we shall go with gemini)
 5. **Aircraft Performance:** Apply realistic aircraft constraints.
 6. **Flight Dynamics:** Smooth the path with realistic turn modeling and altitude/speed profiles.
 7. **Visualization:** View the generated path in 3D or export it.
