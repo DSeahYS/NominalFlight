@@ -128,7 +128,7 @@ For local deployment with enhanced security, the system supports configuring wit
 # Sample Raw Data
 ![image](https://github.com/user-attachments/assets/238d9f72-31f8-4ee8-a509-5aaeeb1e45a8)
 
-# Cleaned with Data_cleaner.py
+# Cleaned with clean_historical_data.py
 ![image](https://github.com/user-attachments/assets/07e47106-b958-47bc-8912-a4a7f6459d29)
 
 # Extraction of Nominal Information
