@@ -1,4 +1,4 @@
-# Nominal Flight Path Generator
+# Nominal Flight Path Generator (left validation)
 
 
 A  flight path generation system producing realistic aircraft trajectories with three levels of variation, built on aircraft physics models and statistical pattern extraction.
